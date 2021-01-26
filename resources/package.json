@@ -1,0 +1,14 @@
+{
+  "name": "your-tiddlywikis",
+  "version": "1.0.0",
+  "description": "Created by create-tiddlywiki",
+  "scripts": {
+    "tiddlywiki": "tiddlywiki",
+    "tw": "tiddlywiki"
+  },
+  "dependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "private": true
+}

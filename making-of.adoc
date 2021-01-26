@@ -1,0 +1,27 @@
+= The Making-of this project
+
+== Why?
+
+See https://github.com/Jermolene/TiddlyWiki5/discussions/5420
+
+== Library selection
+
+https://github.com/lirantal/nodejs-cli-apps-best-practices[Node.js CLI Apps
+Best Practices] has great guidelines, and some of them, point to some
+specific library.
+
+* Command line parsing: http://yargs.js.org[Yargs] is pirate-themed
+  and recommended by the above guidelines. However, `TiddlyServer`
+  uses https://github.com/tj/commander.js[*Commander.js*] so that is a sensible
+  choice.
+* Prompts: https://github.com/terkelg/prompts[*Prompts*], with its select
+  (for TiddlyWiki editions) and maybe multi-select (for plugins?).
+  https://github.com/enquirer/enquirer[Enquirer] also looks good, but it has
+  less stars and weekly downloads.
+
+== Coding standards
+
+Went for https://github.com/standard/standard[StandardJS], although I am aware
+that it clashes with [TiddlyWiki Coding Style
+Guidelines]https://tiddlywiki.com/dev/#TiddlyWiki%20Coding%20Style%20Guidelines,
+that demand double quotes and 4 spaces for indentation
