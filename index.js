@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const userInput = require('./lib/user-input')
 const twCli = require('./lib/twcli')
 const resources = require('./lib/resources')
