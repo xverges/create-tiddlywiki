@@ -18,6 +18,8 @@ specific library.
   (for TiddlyWiki editions) and maybe multi-select (for plugins?).
   https://github.com/enquirer/enquirer[Enquirer] also looks good, but it has
   less stars and weekly downloads.
+* Colors: https://github.com/lukeed/kleur[*KLEUR*], since it is already used
+  by Prompts.
 
 == Coding standards
 
@@ -25,3 +27,9 @@ Went for https://github.com/standard/standard[StandardJS], although I am aware
 that it clashes with [TiddlyWiki Coding Style
 Guidelines]https://tiddlywiki.com/dev/#TiddlyWiki%20Coding%20Style%20Guidelines,
 that demand double quotes and 4 spaces for indentation
+
+== Local testing
+
+When a package does not have a `bin` entry in its `package.json`, running
+`npx folderForThisProject` works. However, now that we have a `bin` entry,
+we need to run `npx --package folderForThisProject create-tiddlywiki`.
