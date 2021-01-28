@@ -2,16 +2,33 @@
 
 const { yellow } = require('kleur')
 
-const userInput = require('./lib/user-input')
+const { userRequirements } = require('./lib/user-input')
 const twCli = require('./lib/twcli')
 const resources = require('./lib/resources')
 
-userInput().then((requirements) => {
-  twCli.create(requirements.folder, requirements.edition)
-  resources.install()
+const howToStart = (requirements) => {
+  const help = []
+  const indent = '    '
+  if (requirements.runtime.includes('tiddlywiki')) {
+    help.push(`${indent}* start the tiddlywiki server running ${yellow('npx tiddlywiki ' + requirements.tiddlywikis[0].folder + ' --listen')}`)
+  }
+  if (requirements.runtime.includes('tiddlyserver')) {
+    help.push(`${indent}* start tiddlyserver running ${yellow('npx tiddlyserver --config tiddlyserver.json')}`)
+  }
+  if (help.length) {
+    help.unshift('You can then')
+  }
+  return help.join('\n')
+}
+
+userRequirements().then((requirements) => {
+  requirements.tiddlywikis.forEach((twSpec) => {
+    twCli.create(twSpec.folder, twSpec.edition)
+  })
+  resources.install(requirements)
   console.log(`
     Ready!
     You can now run ${yellow('npm install')} to complete the installation.
-    You can then start the server running ${yellow('npm run tiddlywiki -- ' + requirements.folder + ' --listen')}
+    ${howToStart(requirements)}
   `)
 })
