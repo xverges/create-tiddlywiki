@@ -2,6 +2,9 @@
   "name": "your-tiddlywikis",
   "version": "1.0.0",
   "description": "Created by create-tiddlywiki",
+  "scripts": {
+    "start": "echo Update with a tiddlywiki or tiddlyserver command"
+  },
   "dependencies": {},
   "keywords": [],
   "author": "",
